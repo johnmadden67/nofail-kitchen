@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No-Fail Kitchen — Process-Driven Recipes for Perfect Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== HOMEPAGE-SPECIFIC STYLES ===== */
+.home-hero {
+  background: linear-gradient(175deg, var(--ink) 0%, #352f28 55%, #5a3a24 100%);
+  padding: 6rem 2rem 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.home-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(184,92,56,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(200,150,62,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+.home-hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+.home-hero-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terra-light);
+  border: 1px solid rgba(184,92,56,0.4);
+  padding: 0.35rem 1rem;
+  margin-bottom: 2rem;
+}
+.home-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+.home-hero h1 em { font-style: italic; color: var(--terra-light); }
+.home-hero p {
+  color: rgba(250,246,240,0.7);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.method-strip {
+  background: var(--warm-white);
+  border-top: 3px solid var(--terra);
+  padding: 3rem 2rem;
+}
+.method-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.method-item { text-align: center; }
+.method-icon {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terra);
+  background: var(--cream);
+  border: 1.5px solid var(--terra);
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+.method-item h3 {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+.method-item p { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; }
+
+.recipes-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+.recipes-section > h2 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+.recipes-section > p {
+  color: var(--text-light);
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
+
+.recipe-card {
+  background: white;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.2s;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 1.5rem;
+}
+.recipe-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.recipe-card-image {
+  overflow: hidden;
+  min-height: 180px;
+}
+.recipe-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.recipe-card-body { padding: 1.5rem 2rem; }
+.recipe-card-badge {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 0.5rem;
+}
+.recipe-card-body h3 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+.recipe-card-body .desc {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.55;
+}
+.recipe-card-meta {
+  display: flex;
+  gap: 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--terra);
+  letter-spacing: 0.04em;
+  flex-wrap: wrap;
+}
+
+.coming-soon-card {
+  border: 1.5px dashed var(--border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+}
+.coming-soon-card p {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-lighter);
+  letter-spacing: 0.06em;
+}
+
+.about-section {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 4rem 2rem;
+}
+.about-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-inner h2 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--terra-light);
+}
+.about-inner p {
+  color: rgba(250,246,240,0.7);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .method-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .recipe-card { grid-template-columns: 1fr; }
+  .home-hero { padding: 4rem 1.5rem 3.5rem; }
+}
+@media (max-width: 480px) {
+  .method-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+}
+</style>
+</head>
+<body data-page="home">
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="logo">No-Fail <span>Kitchen</span></a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <div class="nav-links" id="nav-drawer" role="menu">
+    <a href="#recipes" data-nav-section="recipes">Recipes</a>
+    <a href="#method" data-nav-section="method">Method</a>
+    <a href="#about" data-nav-section="about">About</a>
+  </div>
+</nav>
+
+<section class="home-hero" id="hero">
+  <div class="home-hero-content">
+    <div class="home-hero-badge">Process-Driven Cooking</div>
+    <h1>Recipes That <em>Can't Fail</em></h1>
+    <p>Every recipe is a technical guide — with phased execution, sensory checkpoints, failure recovery, and full prep guides. Designed so anyone can cook perfect meals, every time.</p>
+  </div>
+</section>
+
+<section class="method-strip" id="method">
+  <div class="method-grid">
+    <div class="method-item">
+      <div class="method-icon">01</div>
+      <h3>Phase-Based</h3>
+      <p>Every recipe broken into clear execution phases with objectives and timing</p>
+    </div>
+    <div class="method-item">
+      <div class="method-icon">02</div>
+      <h3>Checkpoints</h3>
+      <p>Sensory tests at every critical step — you'll know it's right before moving on</p>
+    </div>
+    <div class="method-item">
+      <div class="method-icon">03</div>
+      <h3>Recovery</h3>
+      <p>When something goes wrong, inline failure modes tell you exactly how to fix it</p>
+    </div>
+    <div class="method-item">
+      <div class="method-icon">04</div>
+      <h3>Full Prep</h3>
+      <p>Tools guide, ingredient prep, and parallel timeline — everything planned before you start</p>
+    </div>
+  </div>
+</section>
+
+<section class="recipes-section" id="recipes">
+  <h2>Recipes</h2>
+  <p>Each guide is tested, refined, and built for zero-guesswork execution.</p>
+
+  <a href="pastitsio.html" class="recipe-card">
+    <div class="recipe-card-image">
+      <img src="images/pastitsio-card.jpeg" alt="Pastitsio">
+    </div>
+    <div class="recipe-card-body">
+      <div class="recipe-card-badge">Recipe No. 001 — Greek</div>
+      <h3>Pastitsio</h3>
+      <p class="desc">The Greek answer to lasagna — layers of bucatini pasta, cinnamon-spiced meat sauce, and a golden b&eacute;chamel crust. Six phases, thirteen steps, zero guesswork.</p>
+      <div class="recipe-card-meta">
+        <span>2.5 hrs total</span>
+        <span>6 phases</span>
+        <span>Intermediate</span>
+        <span>8 servings</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="shrimp-and-grits.html" class="recipe-card">
+    <div class="recipe-card-image">
+      <img src="images/shrimp-and-grits.jpeg" alt="Shrimp and Grits">
+    </div>
+    <div class="recipe-card-body">
+      <div class="recipe-card-badge">Recipe No. 002 — Southern / Cajun</div>
+      <h3>Shrimp &amp; Grits</h3>
+      <p class="desc">Creamy stone-ground grits topped with seared shrimp, andouille, bacon, and a bright pan sauce. Four phases, ten steps, restaurant results at home.</p>
+      <div class="recipe-card-meta">
+        <span>1 hr total</span>
+        <span>4 phases</span>
+        <span>Intermediate</span>
+        <span>4 servings</span>
+      </div>
+    </div>
+  </a>
+
+  <a href="cajun-seasoning.html" class="recipe-card">
+    <div class="recipe-card-image">
+      <img src="images/cajun-seasoning.jpeg" alt="Cajun Seasoning">
+    </div>
+    <div class="recipe-card-body">
+      <div class="recipe-card-badge">Pantry Staple — Cajun</div>
+      <h3>Salt-Free Cajun Seasoning</h3>
+      <p class="desc">A bold, smoky, versatile spice blend with zero sodium — so you control the salt, not the seasoning. Five minutes to make, months of use.</p>
+      <div class="recipe-card-meta">
+        <span>5 min</span>
+        <span>3 steps</span>
+        <span>Beginner</span>
+        <span>&#8531; cup yield</span>
+      </div>
+    </div>
+  </a>
+
+  <div class="coming-soon-card">
+    <p>More recipes in development — stay tuned.</p>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <h2>Why This Exists</h2>
+    <p>Most recipes tell you what to do. They don't tell you what it should look like when it's working, what to do when it isn't, or how to plan your time so everything comes together at once.</p>
+    <p>No-Fail Kitchen is for people who think in systems — who want to understand the process, not just follow orders. Every recipe is tested, refined, and structured like a technical guide so you can execute with confidence.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  &copy; 2026 No-Fail Kitchen. All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

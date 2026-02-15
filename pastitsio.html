@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pastitsio — No-Fail Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="recipe">
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="logo">No-Fail <span>Kitchen</span></a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+  <div class="nav-links" id="nav-drawer" role="menu">
+    <a href="index.html">Recipes</a>
+    <button class="print-btn" onclick="window.print()">&#128424; Print</button>
+  </div>
+</nav>
+
+<!-- ===== HERO IMAGE ===== -->
+<div class="recipe-hero-image">
+  <img src="images/pastitsio-hero.jpeg" alt="Baked pastitsio with golden béchamel crust">
+</div>
+
+<!-- ===== RECIPE HERO ===== -->
+<div class="recipe-hero">
+  <div class="page">
+    <div class="hero-label">Recipe No. 001 — Greek</div>
+    <h1>Pastitsio</h1>
+    <div class="hero-sub">The Greek answer to lasagna — layers of bucatini pasta in a cinnamon-spiced meat sauce, bound together under a golden béchamel crust. Six phases. Thirteen steps. Zero guesswork.</div>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="lbl">Total Time</div><div class="val">2 hrs 30 min</div></div>
+      <div class="hero-meta-item"><div class="lbl">Active Time</div><div class="val">55 min</div></div>
+      <div class="hero-meta-item"><div class="lbl">Phases</div><div class="val">6</div></div>
+      <div class="hero-meta-item"><div class="lbl">Serves</div><div class="val">8</div></div>
+      <div class="hero-meta-item"><div class="lbl">Difficulty</div><div class="val">Intermediate</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PHASE NAVIGATION ===== -->
+<nav class="phase-nav" role="navigation" aria-label="Recipe phases">
+  <div class="phase-nav-inner">
+    <a href="#before">Before You Begin</a>
+    <a href="#tools">Tools</a>
+    <a href="#prep">Prep</a>
+    <a href="#phase1">1 · Meat Sauce</a>
+    <a href="#phase2">2 · Pasta</a>
+    <a href="#phase3">3 · Béchamel</a>
+    <a href="#phase4">4 · Assembly</a>
+    <a href="#phase5">5 · Bake</a>
+    <a href="#phase6">6 · Cut &amp; Serve</a>
+  </div>
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="page">
+
+  <!-- BEFORE YOU BEGIN -->
+  <div class="read-ahead" id="before">
+    <strong>Before You Begin — Read This First</strong>
+    Read the entire recipe before you start. This dish has parallel tasks — the pasta cooks while the meat sauce simmers, and the béchamel comes together while both are cooling. Understanding the full flow prevents bottlenecks. Set aside all your tools and pre-measure every ingredient before you turn on the stove.
+  </div>
+
+  <!-- HEAT REFERENCE -->
+  <div class="section" style="padding:20px 0;">
+    <div class="heat-ref-title">🌡 Stovetop Heat Reference</div>
+    <div class="heat-row"><span class="heat-label">Low</span><span class="heat-val">2–3 / 10 on the dial</span></div>
+    <div class="heat-row"><span class="heat-label">Medium-Low</span><span class="heat-val">3–4 / 10</span></div>
+    <div class="heat-row"><span class="heat-label">Medium</span><span class="heat-val">5 / 10</span></div>
+    <div class="heat-row"><span class="heat-label">Medium-High</span><span class="heat-val">6–7 / 10</span></div>
+    <div class="heat-row"><span class="heat-label">High</span><span class="heat-val">8–9 / 10</span></div>
+  </div>
+
+  <!-- ===== TOOLS GUIDE ===== -->
+  <div class="section-header" id="tools" onclick="toggleSection(this)">
+    Tools Guide
+    <span class="toggle">▼</span>
+  </div>
+  <div class="collapsible">
+    <div class="tools-grid">
+      <div class="tool-row"><span class="tool-name">Large pot (6+ qt)</span><span class="tool-note">For boiling pasta. Needs enough room for the bucatini to move freely.</span></div>
+      <div class="tool-row"><span class="tool-name">Large deep skillet or Dutch oven</span><span class="tool-note">For the meat sauce. Needs to be wide enough for the beef to brown without steaming.</span></div>
+      <div class="tool-row"><span class="tool-name">Medium saucepan (3 qt)</span><span class="tool-note">For the béchamel. Heavy-bottomed preferred — thin pans create hot spots that scorch the roux.</span></div>
+      <div class="tool-row"><span class="tool-name">7×11" or 9×13" baking dish</span><span class="tool-note">Glass is ideal — you can see the pasta layers through the sides to check for gaps.</span></div>
+      <div class="tool-row"><span class="tool-name">Whisk</span><span class="tool-note">Essential for the béchamel. A fork won't cut it — you need the whisk to prevent lumps.</span></div>
+      <div class="tool-row"><span class="tool-name">Wooden spoon</span><span class="tool-note">For breaking up the ground beef and stirring the meat sauce.</span></div>
+      <div class="tool-row"><span class="tool-name">Colander</span><span class="tool-note">For draining the pasta.</span></div>
+      <div class="tool-row"><span class="tool-name">Ladle</span><span class="tool-note">For adding milk to the roux gradually and for spooning béchamel over the assembly.</span></div>
+      <div class="tool-row"><span class="tool-name">Olive oil spray</span><span class="tool-note">For coating the baking pan. Olive oil keeps it Greek and avoids seed oils.</span></div>
+      <div class="tool-row"><span class="tool-name">Sharp knife + spatula</span><span class="tool-note">For cutting and serving. Let it rest first — cut too early and the layers run.</span></div>
+      <div class="tool-row"><span class="tool-name">Small bowls (3–4)</span><span class="tool-note">For pre-measured spices, cheese, and egg separation. This is your mise en place hardware.</span></div>
+    </div>
+  </div>
+
+  <!-- ===== INGREDIENT PREP (MISE EN PLACE) ===== -->
+  <div class="section-header" id="prep" onclick="toggleSection(this)">
+    Ingredient Prep — Mise en Place
+    <span class="toggle">▼</span>
+  </div>
+  <div class="collapsible">
+    <p style="color:#665e54; font-size:0.92rem; margin-bottom:1.25rem; line-height:1.6;">
+      Measure and prepare everything below before you turn on the stove. Group them by phase — when a phase starts, you grab that group and go.
+    </p>
+
+    <div class="prep-group">
+      <div class="prep-group-title">Phase 1 — Meat Sauce</div>
+      <div class="prep-item"><span class="prep-qty">1 lb</span><span class="prep-ing">Ground beef (80/20) <span class="prep-note">— taken out of the fridge 15 min early</span></span></div>
+      <div class="prep-item"><span class="prep-qty">1 medium</span><span class="prep-ing">Onion <span class="prep-note">— finely diced</span></span></div>
+      <div class="prep-item"><span class="prep-qty">3 cloves</span><span class="prep-ing">Garlic <span class="prep-note">— minced</span></span></div>
+      <div class="prep-item"><span class="prep-qty">1 can (14 oz)</span><span class="prep-ing">Crushed tomatoes</span></div>
+      <div class="prep-item"><span class="prep-qty">2 Tbsp</span><span class="prep-ing">Tomato paste</span></div>
+      <div class="prep-item"><span class="prep-qty">¼ cup</span><span class="prep-ing">Dry red wine <span class="prep-note">— or sub beef broth + 1 tsp red wine vinegar</span></span></div>
+      <div class="prep-item"><span class="prep-qty">1 tsp</span><span class="prep-ing">Ground cinnamon</span></div>
+      <div class="prep-item"><span class="prep-qty">¼ tsp</span><span class="prep-ing">Ground cloves</span></div>
+      <div class="prep-item"><span class="prep-qty">1 tsp</span><span class="prep-ing">Dried oregano</span></div>
+      <div class="prep-item"><span class="prep-qty">2 Tbsp</span><span class="prep-ing">Olive oil</span></div>
+      <div class="prep-item"><span class="prep-qty">—</span><span class="prep-ing">Salt and pepper to taste</span></div>
+    </div>
+
+    <div class="prep-group">
+      <div class="prep-group-title">Phase 2 — Pasta</div>
+      <div class="prep-item"><span class="prep-qty">1 lb</span><span class="prep-ing">Bucatini or Misko No. 2 <span class="prep-note">— snap in half before boiling</span></span></div>
+      <div class="prep-item"><span class="prep-qty">1</span><span class="prep-ing">Egg white <span class="prep-note">— separated, save the yolk for béchamel</span></span></div>
+      <div class="prep-item"><span class="prep-qty">½ cup</span><span class="prep-ing">Parmesan <span class="prep-note">— finely grated, from the total measured below</span></span></div>
+      <div class="prep-item"><span class="prep-qty">2 Tbsp</span><span class="prep-ing">Butter</span></div>
+    </div>
+
+    <div class="prep-group">
+      <div class="prep-group-title">Phase 3 — Béchamel</div>
+      <div class="prep-item"><span class="prep-qty">4 Tbsp</span><span class="prep-ing">Butter</span></div>
+      <div class="prep-item"><span class="prep-qty">⅓ cup</span><span class="prep-ing">All-purpose flour</span></div>
+      <div class="prep-item"><span class="prep-qty">3 cups</span><span class="prep-ing">Whole milk <span class="prep-note">— bring to room temp (see warning below)</span></span></div>
+      <div class="prep-item"><span class="prep-qty">3</span><span class="prep-ing">Egg yolks <span class="prep-note">— includes the one from the pasta step</span></span></div>
+      <div class="prep-item"><span class="prep-qty">½ cup</span><span class="prep-ing">Parmesan <span class="prep-note">— finely grated</span></span></div>
+      <div class="prep-item"><span class="prep-qty">pinch</span><span class="prep-ing">Nutmeg <span class="prep-note">— freshly grated if possible</span></span></div>
+    </div>
+
+    <div class="prep-group">
+      <div class="prep-group-title">Topping</div>
+      <div class="prep-item"><span class="prep-qty">¼ cup</span><span class="prep-ing">Parmesan <span class="prep-note">— finely grated</span></span></div>
+      <div class="prep-item"><span class="prep-qty">pinch</span><span class="prep-ing">Nutmeg</span></div>
+    </div>
+
+    <div class="callout tip">
+      <span class="callout-label">Total Cheese</span>
+      <p>You need 1¼ cups grated Parmesan total. Measure it all at once, then divide: ½ cup for the pasta, ½ cup for the béchamel, ¼ cup for the top.</p>
+    </div>
+
+    <div class="callout tip">
+      <span class="callout-label">Total Eggs</span>
+      <p>You need 3 eggs total. Separate 1 egg — the white goes into the pasta, the yolk into the béchamel. Separate 2 more eggs — yolks into the béchamel. You'll have 2 leftover whites (save for another use or discard).</p>
+    </div>
+  </div>
+
+  <!-- ===== TIMELINE ===== -->
+  <div class="section-header" onclick="toggleSection(this)">
+    Execution Timeline
+    <span class="toggle">▼</span>
+  </div>
+  <div class="collapsible">
+    <div class="timeline-bar">
+      <div class="timeline-title">Parallel Execution Flow — 2 hrs 30 min total</div>
+      <div class="timeline-track">
+        <div class="timeline-segment tl-meat">Meat<br>Sauce</div>
+        <div class="timeline-segment tl-pasta">Pasta</div>
+        <div class="timeline-segment tl-bechamel">Béchamel</div>
+        <div class="timeline-segment tl-assemble">Build</div>
+        <div class="timeline-segment tl-bake">Bake</div>
+        <div class="timeline-segment tl-rest">Rest &amp; Serve</div>
+      </div>
+      <div class="timeline-labels">
+        <div class="timeline-time tt-meat">~25 min</div>
+        <div class="timeline-time tt-pasta">~15 min</div>
+        <div class="timeline-time tt-bechamel">~20 min</div>
+        <div class="timeline-time tt-assemble">~10 min</div>
+        <div class="timeline-time tt-bake">~45 min</div>
+        <div class="timeline-time tt-rest">~35 min</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <span class="callout-label">Pipeline Tip</span>
+      <p>Start the pasta water when the meat sauce has about 10 minutes left. While the pasta boils, start on the béchamel roux. This overlap saves about 20 minutes off the total time. The timeline above is approximate — the checkpoints tell you when each phase is actually done.</p>
+    </div>
+  </div>
+
+  <!-- ===== PHASE 1: MEAT SAUCE ===== -->
+  <div class="phase" id="phase1">
+    <div class="phase-block" onclick="togglePhase(this)">
+      <div class="phase-header">
+        Phase 1 of 6
+        <span class="phase-toggle">▼</span>
+      </div>
+      <div class="phase-title">The Meat Sauce</div>
+      <div class="phase-time">25 min active · Medium-high heat → simmer</div>
+      <div class="phase-goal">Objective: Build a dry, deeply flavored, cinnamon-spiced meat sauce with no residual moisture.</div>
+    </div>
+    <div class="phase-body">
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 1</span></div>
+        <p>Heat 2 Tbsp olive oil in the skillet over medium-high heat. When the oil shimmers and flows easily across the pan (about 90 seconds), add the diced onion. Cook for 4–5 minutes, stirring occasionally, until the onion is translucent and the edges are just starting to turn golden.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 2</span></div>
+        <p>Add the minced garlic. Stir constantly for 30 seconds — garlic burns fast. You want it fragrant, not brown. The moment the kitchen smells like garlic, move to the next step.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 3</span></div>
+        <p>Add the ground beef. Break it into small pieces with the wooden spoon — you want crumbles, not chunks. Cook for 5–7 minutes until no pink remains. Don't touch it for the first 2 minutes — let it develop a sear on the bottom before breaking it up.</p>
+      </div>
+
+      <div class="callout check">
+        <span class="callout-label">✓ Look for:</span>
+        <p>The beef should be uniformly browned with some crispy bits. No pools of liquid — if there's standing moisture, keep cooking. The fat should have rendered and the pan should look dry between the crumbles.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 4</span></div>
+        <p>Stir in the tomato paste and cook for 1 minute — it should darken slightly and coat the meat. Add the wine (or broth + vinegar sub). It will sizzle and steam. Scrape the bottom of the pan to release the fond (the brown bits). Let the wine cook off almost completely, about 2 minutes.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 5</span></div>
+        <p>Add the crushed tomatoes, cinnamon, cloves, and oregano. Stir to combine. Bring to a simmer, then reduce heat to medium-low. Let it cook uncovered for 15–20 minutes, stirring every 5 minutes.</p>
+      </div>
+
+      <div class="callout warn">
+        <span class="callout-label">Critical:</span>
+        <p>The sauce must be DRY when it's done. If there's visible liquid pooling when you tilt the pan, keep simmering. Wet sauce will make the pasta layer soggy and the dish will fall apart when you cut it. When you drag a spoon through the sauce, it should leave a trail that holds for 2–3 seconds.</p>
+      </div>
+
+      <div class="callout check">
+        <span class="callout-label">✓ Look for:</span>
+        <p>The sauce should smell warmly spiced (cinnamon should be noticeable but not overwhelming), look thick and cohesive, and hold its shape on a spoon. Season with salt and pepper to taste now. Set aside.</p>
+      </div>
+
+      <div class="callout recovery">
+        <span class="callout-label">If the sauce is too wet</span>
+        <p>Turn heat up to medium-high and stir frequently for 3–5 more minutes. The tomato liquid needs to cook off. This is always fixable — you just need more time.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== PHASE 2: PASTA ===== -->
+  <div class="phase" id="phase2">
+    <div class="phase-block" onclick="togglePhase(this)">
+      <div class="phase-header">
+        Phase 2 of 6
+        <span class="phase-toggle">▼</span>
+      </div>
+      <div class="phase-title">The Pasta</div>
+      <div class="phase-time">15 min active · High heat (boil) → off heat for binding</div>
+      <div class="phase-goal">Objective: Par-cook the bucatini and bind it with egg white, butter, and cheese so it holds together in the pan as a cohesive layer.</div>
+    </div>
+    <div class="phase-body">
+
+      <div class="callout warn">
+        <span class="callout-label">Preheat Reminder</span>
+        <p>Set your oven to 375°F (190°C) now. It needs to be fully preheated by the time assembly is done.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 6</span></div>
+        <p>Bring the large pot of water to a rolling boil. Salt it generously — it should taste like seawater. Snap the bucatini in half before adding it to the pot. (Dry pasta snaps cleanly; trying to cut it after cooking is messy and uneven.)</p>
+      </div>
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 7</span></div>
+        <p>Cook the pasta for 2 minutes LESS than the package direction. You're par-boiling — the pasta will finish cooking in the oven. It should be noticeably firm when you bite it, with a visible white core when you snap a piece in half.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 8</span></div>
+        <p>Drain well and return to the pot off-heat. Immediately add 2 Tbsp butter and toss until melted and coating every strand. Then add the egg white and toss vigorously — the residual heat will partially cook it into a binding glaze. Finally, fold in ½ cup Parmesan.</p>
+      </div>
+
+      <div class="callout check">
+        <span class="callout-label">✓ Look for: — The Secret Bind</span>
+        <p>Lift a spoonful of pasta — the noodles should cling together rather than fall apart. There should be a visible glossy coating on every strand. This egg-butter-cheese bind is what holds the pasta layer together when you slice the finished dish.</p>
+      </div>
+
+      <div class="callout tip">
+        <span class="callout-label">Why We Snap the Pasta</span>
+        <p>Half-length noodles pack flat and tight into the baking dish, fill the corners, and give you that dense uniform base that slices cleanly. Full-length noodles curl and overlap, leaving air gaps that raise the base height and steal room from the béchamel.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== PHASE 3: BÉCHAMEL ===== -->
+  <div class="phase" id="phase3">
+    <div class="phase-block" onclick="togglePhase(this)">
+      <div class="phase-header">
+        Phase 3 of 6
+        <span class="phase-toggle">▼</span>
+      </div>
+      <div class="phase-title">The Béchamel</div>
+      <div class="phase-time">20 min active · Medium heat throughout</div>
+      <div class="phase-goal">Objective: Build a smooth, thick white sauce enriched with egg yolks, cheese, and nutmeg — this becomes the golden crust.</div>
+    </div>
+    <div class="phase-body">
+
+      <div class="callout warn">
+        <span class="callout-label">Milk Temperature Matters</span>
+        <p>Use room-temperature milk if possible. Cold milk from the fridge drops the roux temperature dramatically, which means the sauce can take 10–15 minutes to thicken instead of 5–7. It will still work — it just takes patience. If your milk is cold and the sauce seems watery after 8 minutes of whisking, don't panic. It's not broken. Keep going.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 9</span></div>
+        <p>Melt 4 Tbsp butter in the saucepan over medium heat. Once foaming, add the flour all at once. Whisk constantly for 2 minutes. The roux should smell faintly nutty and turn a very pale gold — not brown. This cooks out the raw flour taste.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 10</span></div>
+        <p>Add the milk in three additions, whisking vigorously between each. First addition (~1 cup): the roux will seize into a thick paste — whisk hard until smooth. Second addition (~1 cup): it will loosen into a creamy sauce. Third addition (remaining): whisk until fully incorporated. Continue cooking and whisking over medium heat until the sauce thickens enough to coat the back of a spoon, 5–7 minutes.</p>
+      </div>
+
+      <div class="callout check">
+        <span class="callout-label">✓ Look for: — The Spoon Test</span>
+        <p>Dip a spoon in the béchamel and run your finger across the back. The line should hold without the sauce running back together. If it runs, keep cooking. If it's so thick it mounds on the spoon, add a splash of milk.</p>
+      </div>
+
+      <div class="step">
+        <span class="step-number">10a</span>
+        <p>REMOVE from heat. This is critical for the next step. In a separate small bowl, beat the 3 egg yolks. Now temper them: ladle about ½ cup of the hot béchamel into the yolks while whisking the yolks constantly. This warms the yolks gradually. Then pour the tempered yolk mixture back into the saucepan, whisking the whole time.</p>
+      </div>
+
+      <div class="callout warn">
+        <span class="callout-label">Scrambled Eggs Alert</span>
+        <p>If you dump the yolks directly into the hot sauce, they'll scramble into little curds. The tempering step — warming the yolks first with a small amount of sauce — is not optional. Take the pot off the heat first, temper slowly, and whisk constantly. This is the single most common failure point in béchamel.</p>
+      </div>
+
+      <div class="callout recovery">
+        <span class="callout-label">If you see egg bits</span>
+        <p>Pour the sauce through a fine mesh strainer immediately. You'll lose some volume but salvage the texture. The finished dish won't suffer.</p>
+      </div>
+
+      <div class="step">
+        <span class="step-number">10b</span>
+        <p>Stir in ½ cup Parmesan and a pinch of nutmeg. Taste for salt. The béchamel should be savory, slightly sweet from the milk, and smooth as silk.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== PHASE 4: ASSEMBLY ===== -->
+  <div class="phase" id="phase4">
+    <div class="phase-block" onclick="togglePhase(this)">
+      <div class="phase-header">
+        Phase 4 of 6
+        <span class="phase-toggle">▼</span>
+      </div>
+      <div class="phase-title">Assembly</div>
+      <div class="phase-time">10 min active · No heat</div>
+      <div class="phase-goal">Objective: Layer the components into the baking dish with a flat, even pasta base, uniform meat distribution, and a smooth béchamel cap.</div>
+    </div>
+    <div class="phase-body">
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 11</span></div>
+        <p>Spray the baking dish with olive oil spray — cover the bottom and all sides. Spread half the pasta mixture evenly across the bottom. Press it down gently with the back of the spoon to eliminate air gaps, especially in the corners. The half-length noodles should lay flat and tight.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 12</span></div>
+        <p>Spread ALL the meat sauce over the pasta in an even layer. Then top with the remaining pasta, pressing down again gently.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">Step 13</span></div>
+        <p>Pour the béchamel over the top. Use the back of the ladle to spread it evenly to every edge and corner — any exposed pasta will burn. Sprinkle the remaining ¼ cup Parmesan and a pinch of nutmeg over the top.</p>
+      </div>
+
+      <div class="callout check">
+        <span class="callout-label">✓ Look for: — Ready for the Oven</span>
+        <p>Looking down at the dish, you should see a smooth, creamy white surface with no pasta poking through. Through the glass sides (if using a glass dish), you should see three distinct layers: pasta, meat, pasta, with béchamel on top.</p>
+      </div>
+
+      <div class="callout tip">
+        <span class="callout-label">Make-Ahead Option</span>
+        <p>You can stop here, cover tightly with foil or plastic wrap, and refrigerate for up to 24 hours. Add 10–15 minutes to the bake time if going in cold.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== PHASE 5: BAKE ===== -->
+  <div class="phase" id="phase5">
+    <div class="phase-block" onclick="togglePhase(this)">
+      <div class="phase-header">
+        Phase 5 of 6
+        <span class="phase-toggle">▼</span>
+      </div>
+      <div class="phase-title">Bake</div>
+      <div class="phase-time">45 min passive · 375°F (190°C)</div>
+      <div class="phase-goal">Objective: Cook the assembly through and develop a deep golden-brown crust on the béchamel.</div>
+    </div>
+    <div class="phase-body">
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">—</span></div>
+        <p>Place the dish on the center rack of the preheated 375°F oven. Place a baking sheet on the rack below to catch any drips. Bake for 40–50 minutes.</p>
+      </div>
+
+      <div class="callout check">
+        <span class="callout-label">✓ Look for: — Done When</span>
+        <p>The top is deep golden-brown (not pale gold — that's underdone) and the edges are visibly bubbling. The béchamel should look like a golden crust, not a white sauce. If the top is browning unevenly, rotate the dish 180° at the 30-minute mark.</p>
+      </div>
+
+      <div class="callout recovery">
+        <span class="callout-label">If the top browns too fast</span>
+        <p>Tent loosely with foil for the remaining bake time. This protects the crust while letting the interior finish cooking.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== PHASE 6: CUT & SERVE ===== -->
+  <div class="phase" id="phase6">
+    <div class="phase-block" onclick="togglePhase(this)">
+      <div class="phase-header">
+        Phase 6 of 6
+        <span class="phase-toggle">▼</span>
+      </div>
+      <div class="phase-title">Rest, Cut &amp; Serve</div>
+      <div class="phase-time">35 min passive → 5 min active</div>
+      <div class="phase-goal">Objective: Let the pastitsio set so it holds its shape when sliced. Patience here is the difference between a clean slice and a sloppy mess.</div>
+    </div>
+    <div class="phase-body">
+
+      <div class="step">
+        <div class="step-header"><span class="step-num">—</span></div>
+        <p>Remove from the oven and let it rest uncovered for at least 30–45 minutes. This is not optional. The béchamel and egg proteins need to set as the dish cools — if you cut it hot, the layers will run.</p>
+      </div>
+
+      <div class="callout warn">
+        <span class="callout-label">Do Not Skip the Rest</span>
+        <p>This is the hardest step because the kitchen smells incredible and you're hungry. But cutting into a hot pastitsio gives you a sloppy, runny plate. At 30 minutes, the slices hold. At 45, they're perfect. Use a sharp knife and a spatula to lift pieces cleanly.</p>
+      </div>
+
+      <div class="callout tip">
+        <span class="callout-label">The Sacrifice Piece</span>
+        <p>The first corner piece never comes out cleanly — accept this. It's the cook's snack. Every piece after that will lift out beautifully.</p>
+      </div>
+
+      <!-- Storage Table -->
+      <div class="section-header" style="margin-top:2rem;" onclick="toggleSection(this)">
+        Storage &amp; Reheating
+        <span class="toggle">▼</span>
+      </div>
+      <div class="collapsible">
+        <table class="storage-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Duration</th>
+              <th>Instructions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Refrigerator</td><td>Up to 4 days</td><td>Cover tightly with foil or transfer to airtight container.</td></tr>
+            <tr><td>Freezer</td><td>Up to 3 months</td><td>Wrap individual portions in plastic wrap, then foil. Thaw overnight in fridge before reheating.</td></tr>
+            <tr><td>Reheat (oven)</td><td>20–25 min at 350°F</td><td>Cover with foil to prevent the top from burning. Remove foil for last 5 min to re-crisp.</td></tr>
+            <tr><td>Reheat (microwave)</td><td>2–3 min per slice</td><td>Works but the crust will soften. Use medium power to heat evenly.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== FOOTER NOTE ===== -->
+  <div style="text-align:center; margin-top:3rem; padding-top:2rem; border-top:2px solid var(--copper);">
+    <p style="font-family:var(--mono); font-size:0.7rem; color:var(--copper); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:0.5rem;">No-Fail Kitchen — Recipe No. 001</p>
+    <p style="font-size:0.85rem; color:#998f85; font-style:italic;">Adapted from MyGreekDish.com with professional refinements and field-tested corrections.</p>
+  </div>
+
+</div>
+
+
+<footer class="site-footer">
+  &copy; 2026 No-Fail Kitchen. All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
